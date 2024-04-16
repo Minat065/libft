@@ -6,11 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:01:09 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:09:21 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:13:01 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+char	ft_toupper(int c)
 {
 	if ('a' <= c && c <= 'z')
 		return (c - 32);
@@ -20,7 +20,7 @@ char	ft_toupper(char c)
 //#include <ctype.h>
 //#include <stdio.h>
 //
-//int	main(void)
+// int	main(void)
 //{
 //	int i = 0;
 //

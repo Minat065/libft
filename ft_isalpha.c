@@ -6,11 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:36:33 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:32:08 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:14:04 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
 		return (1);
