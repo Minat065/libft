@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 17:36:33 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:32:08 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/16 20:23:26 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/16 20:32:37 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isascii(int c)
 {
-	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
 
-//#include <stdio.h>
-//#include <ctype.h>
-//
-// int	main(void)
-//{
-//	int i = 0;
-//	while (i < 256)
-//	{
-//		if (isalpha(i) != ft_isalpha(i))
-//			printf("error: %d\n", i);
-//		i++;
-//	}
-//	printf("done\n");
-//	return (0);
-//}
+/* #include <ctype.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	int i = -1;
+	while (i < 130)
+	{
+		printf("c: %c, ft_isascii: %d, isascii: %d\n", i, ft_isascii(i),
+			isascii(i));
+		i++;
+	}
+	return (0);
+} */

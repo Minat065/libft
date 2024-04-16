@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:11:24 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:14:51 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:32:12 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-#include <ctype.h>
+/* #include <ctype.h>
 #include <stdio.h>
 
 int	main(void)
@@ -29,4 +29,4 @@ int	main(void)
 	}
 	printf("OK\n");
 	return (0);
-}
+} */

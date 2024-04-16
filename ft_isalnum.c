@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:17:12 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/16 20:21:07 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:32:04 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_isalnum(int c)
 	return (0);
 }
 
-#include <ctype.h>
+/* #include <ctype.h>
 #include <stdio.h>
 
 int	main(void)
@@ -30,4 +30,4 @@ int	main(void)
 	}
 	printf("OK\n");
 	return (0);
-}
+} */
