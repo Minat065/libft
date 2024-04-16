@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 22:10:50 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 00:03:12 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/17 00:04:22 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/17 03:35:32 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 typedef unsigned int	t_size;
 
-void	ft_bzero(void *s, t_size n)
+void	*ft_memmove(void *dst, const void *src, t_size len)
 {
-	unsigned char	*ptr;
-	t_size			i;
+	unsigned char		*d;
+	const unsigned char	*s;
+	t_size				i;
 
-	ptr = (unsigned char *)s;
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
 	i = 0;
-	while (i < n)
+	if (dst == src || len == 0)
+		return (dst);
+	if (d < s)
 	{
-		ptr[i] = 0;
-		i++;
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
+	else
+	{
+		while (len--)
+			d[len] = s[len];
+	}
+	return (dst);
 }
 
 /* #include <stdio.h>
@@ -31,11 +44,9 @@ void	ft_bzero(void *s, t_size n)
 
 int	main(void)
 {
-	char s[10] = "123456789";
-	char s2[10] = "123456789";
-	ft_bzero(s, 5);
-	bzero(s2, 5);
-	printf("ft_bzero: %s\n", s);
-	printf("bzero: %s\n", s2);
+	char	s[10] = "123456789";
+	char	s2[10] = "123456789";
+	printf("ft_memmove: %s\n", ft_memmove(s + 2, s, 8));
+	printf("memmove: %s\n", memmove(s2 + 2, s2, 8));
 	return (0);
 } */

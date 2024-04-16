@@ -6,12 +6,9 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:21:13 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/16 22:09:50 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/17 00:02:21 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
-//#include <string.h>
 
 typedef unsigned int	t_size;
 
@@ -30,7 +27,10 @@ char	*ft_memset(void *b, int c, t_size len)
 	return (b);
 }
 
-/* int	main(void)
+/* #include <string.h>
+#include <stdio.h>
+
+int	main(void)
 {
 	char s[10] = "123456789";
 	char s2[10] = "123456789";

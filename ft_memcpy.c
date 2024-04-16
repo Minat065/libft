@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 22:10:50 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 00:03:12 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/16 23:28:08 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/17 00:03:18 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 typedef unsigned int	t_size;
 
-void	ft_bzero(void *s, t_size n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, t_size n)
 {
-	unsigned char	*ptr;
+	unsigned char	*d;
+	unsigned char	*s;
 	t_size			i;
 
-	ptr = (unsigned char *)s;
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{
-		ptr[i] = 0;
+		d[i] = s[i];
 		i++;
 	}
+	return (dst);
 }
 
 /* #include <stdio.h>
@@ -33,9 +36,7 @@ int	main(void)
 {
 	char s[10] = "123456789";
 	char s2[10] = "123456789";
-	ft_bzero(s, 5);
-	bzero(s2, 5);
-	printf("ft_bzero: %s\n", s);
-	printf("bzero: %s\n", s2);
+	printf("ft_memcpy: %s\n", ft_memcpy(s, "abc", 5));
+	printf("memcpy: %s\n", memcpy(s2, "abc", 5));
 	return (0);
 } */
