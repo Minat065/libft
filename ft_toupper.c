@@ -6,14 +6,14 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:01:09 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/16 21:13:01 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/19 03:30:57 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if ('a' <= c && c <= 'z')
-		return (c - 32);
+	if (c >= 'a' && c <= 'z')
+		return (c -= 32);
 	return (c);
 }
 //

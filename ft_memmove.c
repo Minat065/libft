@@ -6,17 +6,17 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 00:04:22 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 03:35:32 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/19 02:27:14 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef unsigned int	t_size;
+#include <stddef.h>
 
-void	*ft_memmove(void *dst, const void *src, t_size len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char		*d;
 	const unsigned char	*s;
-	t_size				i;
+	size_t				i;
 
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;

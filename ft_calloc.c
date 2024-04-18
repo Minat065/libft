@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:16:09 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 03:52:17 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/19 06:22:36 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/19 06:44:30 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
-{
-	int	i;
+#include "libft.h"
+#include <stdlib.h>
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }
 
 /* #include <libc.h>
@@ -25,8 +29,18 @@ int	ft_strlen(const char *s)
 
 int	main(void)
 {
-	char *s = "";
-	printf("ft_strlen: %d\n", ft_strlen(s));
-	printf("strlen: %lu\n", strlen(s));
+	int *ptr;
+	int *ptr2;
+
+	ptr = (int *)calloc(5, sizeof(int));
+	ptr2 = (int *)ft_calloc(5, sizeof(int));
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d\n", ptr[i]);
+		printf("%d\n", ptr2[i]);
+	}
+	free(ptr);
+	free(ptr2);
+
 	return (0);
 } */

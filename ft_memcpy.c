@@ -6,20 +6,22 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:28:08 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 00:03:18 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/19 04:38:24 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef unsigned int	t_size;
+#include <stddef.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, t_size n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
-	t_size			i;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
+	if (!dst && !src)
+		return (NULL);
 	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
+	s = (const unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{
@@ -38,5 +40,9 @@ int	main(void)
 	char s2[10] = "123456789";
 	printf("ft_memcpy: %s\n", ft_memcpy(s, "abc", 5));
 	printf("memcpy: %s\n", memcpy(s2, "abc", 5));
+
+	printf("ft_memcpy: %s\n", ft_memcpy("", "", 3));
+	printf("memcpy: %s\n", memcpy("", "", 3));
+
 	return (0);
 } */

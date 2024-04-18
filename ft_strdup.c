@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:16:09 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 03:52:17 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/19 06:44:48 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/19 06:51:57 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
-{
-	int	i;
+#include "libft.h"
+#include <stdlib.h>
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+char	*ft_strdup(const char *s1)
+{
+	char	*ptr;
+
+	ptr = (char *)malloc(ft_strlen(s1) + 1);
+	if (!ptr)
+		return (NULL);
+	ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
+	return (ptr);
 }
 
-/* #include <libc.h>
+#include <libc.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	char *s = "";
-	printf("ft_strlen: %d\n", ft_strlen(s));
-	printf("strlen: %lu\n", strlen(s));
+	char *str = "Hello, World!";
+	char *ptr;
+
+	ptr = strdup(str);
+	printf("%s\n", ptr);
+	free(ptr);
+
+	ptr = ft_strdup(str);
+	printf("%s\n", ptr);
+	free(ptr);
+
 	return (0);
-} */
+}

@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:16:09 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 03:52:17 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/19 03:36:54 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/19 03:58:51 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
-{
-	int	i;
+#include <stddef.h>
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+char	*ft_strchr(const char *s, int c)
+{
+	if (c == '\0')
+	{
+		while (*s)
+			s++;
+		return ((char *)s);
+	}
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	return (NULL);
 }
 
-/* #include <libc.h>
-#include <stdio.h>
+/* #include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
-	char *s = "";
-	printf("ft_strlen: %d\n", ft_strlen(s));
-	printf("strlen: %lu\n", strlen(s));
-	return (0);
+	char *s = "Hello, World!";
+	char c = 'H';
+	printf("ft_strchr: %s\n", ft_strchr(s, c));
+	printf("   strchr: %s\n", strchr(s, c));
 } */

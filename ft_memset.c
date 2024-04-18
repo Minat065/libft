@@ -6,16 +6,17 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:21:13 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 00:02:21 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/19 02:28:15 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef unsigned int	t_size;
+#include <stddef.h>
+/* typedef unsigned int	t_size; */
 
-char	*ft_memset(void *b, int c, t_size len)
+char	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*ptr;
-	t_size			i;
+	size_t			i;
 
 	ptr = (unsigned char *)b;
 	i = 0;

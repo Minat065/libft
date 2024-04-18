@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:16:09 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 03:52:17 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/19 03:56:38 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/19 04:40:29 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
-{
-	int	i;
+#include <stddef.h>
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*last_ad;
+
+	last_ad = NULL;
+	if (c == '\0')
+	{
+		while (*s)
+			s++;
+		return ((char *)s);
+	}
+	while (*s)
+	{
+		if (*s == c)
+			last_ad = (char *)s;
+		s++;
+	}
+	return (last_ad);
 }
-
-/* #include <libc.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char *s = "";
-	printf("ft_strlen: %d\n", ft_strlen(s));
-	printf("strlen: %lu\n", strlen(s));
-	return (0);
-} */

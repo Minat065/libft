@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:16:09 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/17 03:52:17 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/19 03:34:17 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/19 04:40:49 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
-
-/* #include <libc.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char *s = "";
-	printf("ft_strlen: %d\n", ft_strlen(s));
-	printf("strlen: %lu\n", strlen(s));
-	return (0);
-} */
