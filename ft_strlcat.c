@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:54:16 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/19 02:29:13 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/19 08:52:00 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	j;
 
 	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
+	dst_len = 0;
+	if (dst)
+		dst_len = ft_strlen(dst);
 	i = 0;
 	j = 0;
-	if (dstsize == 0)
-		return (src_len);
-	while (dst[i] && i < dstsize)
+	while (i < dstsize && dst[i])
 		i++;
-	if (i == dstsize)
-		return (dst_len + src_len);
+	if (i + src_len > dstsize)
+		return (i + src_len);
 	while (src[j] && i + j < dstsize - 1)
 	{
 		dst[i + j] = src[j];
@@ -43,35 +43,41 @@ int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 #include <stdlib.h>
 #include <string.h>
 
+"thx to ntoniolo for this test !", 4
+the cake is a lie !\0I'm hidden lol\r\n
+"
 int	main(void)
 {
-	char	dst2[100] = "Hello";
-	char	src2[] = "World";
+	char	dst[20] = "Hello, ";
+	char	*src;
 	size_t	dstsize;
-	size_t	dstsize2;
 	size_t	ret;
-	size_t	ret2;
-	char	*src3;
-	char	*src4;
-	char	src3;
-char	src[] = "World";
-char	src4;
-char	dst[100] = "Hello";
+	char	ft_dst[20] = "Hello, ";
+	char	*ft_src;
+	size_t	ft_dstsize;
+	size_t	ft_ret;
 
-dstsize = 100;
-dstsize2 = 100;
-ret = ft_strlcat(dst, src, dstsize);
-ret2 = strlcat(dst2, src2, dstsize2);
-printf("dst: %s\n", dst);
-printf("ret: %zu\n", ret);
-printf("dst2: %s\n", dst2);
-printf("ret2: %zu\n", ret2);
-src3 = calloc(100, sizeof(char));
-src4 = calloc(100, sizeof(char));
-for (int i = 0; i < 99; i++)
-{
-	src3[i] = i + 1;
-	src4[i] = i + 1;
-}
-return (0);
-}*/
+	src = "World!";
+	dstsize = 20;
+	ret = strlcat(dst, src, dstsize);
+	printf("strlcat: %s\n", dst);
+	printf("return: %zu\n", ret);
+	ft_src = "World!";
+	ft_dstsize = 20;
+	ft_ret = ft_strlcat(ft_dst, ft_src, ft_dstsize);
+	printf("ft_strlcat: %s\n", ft_dst);
+	printf("return: %zu\n", ft_ret);
+	ret = strlcat(dst, src, 0);
+	printf("strlcat: %s\n", dst);
+	printf("return: %zu\n", ret);
+	ft_ret = ft_strlcat(ft_dst, ft_src, 0);
+	printf("ft_strlcat: %s\n", ft_dst);
+	printf("return: %zu\n", ft_ret);
+	ret = strlcat(dst, src, 5);
+	printf("strlcat: %s\n", dst);
+	printf("return: %zu\n", ret);
+	ft_ret = ft_strlcat(ft_dst, ft_src, 5);
+	printf("ft_strlcat: %s\n", ft_dst);
+	printf("return: %zu\n", ft_ret);
+	return (0);
+} */
