@@ -6,36 +6,35 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:54:16 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/19 08:52:00 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/20 02:53:12 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-int	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	dst_len;
-	size_t	src_len;
 	size_t	i;
 	size_t	j;
+	size_t	dst_len;
+	size_t	src_len;
 
-	src_len = ft_strlen(src);
 	dst_len = 0;
+	src_len = 0;
 	if (dst)
 		dst_len = ft_strlen(dst);
-	i = 0;
-	j = 0;
-	while (i < dstsize && dst[i])
-		i++;
-	if (i + src_len > dstsize)
-		return (i + src_len);
-	while (src[j] && i + j < dstsize - 1)
+	src_len = ft_strlen(src);
+	if (dstsize <= dst_len)
+		return (dstsize + src_len);
+	if (dstsize > dst_len + 1)
 	{
-		dst[i + j] = src[j];
-		j++;
+		i = dst_len;
+		j = 0;
+		while (src[j] && i < dstsize - 1)
+			dst[i++] = src[j++];
+		dst[i] = '\0';
 	}
-	dst[i + j] = '\0';
 	return (dst_len + src_len);
 }
 
@@ -43,41 +42,38 @@ int	ft_strlcat(char *dst, const char *src, size_t dstsize)
 #include <stdlib.h>
 #include <string.h>
 
-"thx to ntoniolo for this test !", 4
-the cake is a lie !\0I'm hidden lol\r\n
-"
+// Include your ft_strlcat function here
+
 int	main(void)
 {
-	char	dst[20] = "Hello, ";
-	char	*src;
 	size_t	dstsize;
-	size_t	ret;
-	char	ft_dst[20] = "Hello, ";
-	char	*ft_src;
-	size_t	ft_dstsize;
-	size_t	ft_ret;
+	size_t	ret1;
+	size_t	ret2;
 
-	src = "World!";
-	dstsize = 20;
-	ret = strlcat(dst, src, dstsize);
-	printf("strlcat: %s\n", dst);
-	printf("return: %zu\n", ret);
-	ft_src = "World!";
-	ft_dstsize = 20;
-	ft_ret = ft_strlcat(ft_dst, ft_src, ft_dstsize);
-	printf("ft_strlcat: %s\n", ft_dst);
-	printf("return: %zu\n", ft_ret);
-	ret = strlcat(dst, src, 0);
-	printf("strlcat: %s\n", dst);
-	printf("return: %zu\n", ret);
-	ft_ret = ft_strlcat(ft_dst, ft_src, 0);
-	printf("ft_strlcat: %s\n", ft_dst);
-	printf("return: %zu\n", ft_ret);
-	ret = strlcat(dst, src, 5);
-	printf("strlcat: %s\n", dst);
-	printf("return: %zu\n", ret);
-	ft_ret = ft_strlcat(ft_dst, ft_src, 5);
-	printf("ft_strlcat: %s\n", ft_dst);
-	printf("return: %zu\n", ft_ret);
+	dstsize = 11;
+	ret1 = strlcat(NULL, "Hello", dstsize);
+	ret2 = ft_strlcat(NULL, "Hello", dstsize);
+	//	printf("strlcat: %zu\n", ret1);
+	// printf("ft_strlcat: %zu\n", ret2);
+	if (ret1 == ret2)
+		printf("OK\n");
+	else
+		printf("NG\n");
+	ret1 = strlcat(NULL, NULL, dstsize);
+	ret2 = ft_strlcat(NULL, NULL, dstsize);
+	//	printf("strlcat: %zu\n", ret1);
+	// printf("ft_strlcat: %zu\n", ret2);
+	if (ret1 == ret2)
+		printf("OK\n");
+	else
+		printf("NG\n");
+	ret1 = strlcat("Hello", NULL, dstsize);
+	ret2 = ft_strlcat("Hello", NULL, dstsize);
+	//	printf("strlcat: %zu\n", ret1);
+	// printf("ft_strlcat: %zu\n", ret2);
+	if (ret1 == ret2)
+		printf("OK\n");
+	else
+		printf("NG\n");
 	return (0);
 } */

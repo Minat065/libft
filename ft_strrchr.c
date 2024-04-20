@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 03:56:38 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/19 04:40:29 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/20 05:04:30 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*last_ad;
+	char	c1;
 
+	c1 = (char)c;
 	last_ad = NULL;
-	if (c == '\0')
+	if (c1 == '\0')
 	{
 		while (*s)
 			s++;
@@ -25,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == c1)
 			last_ad = (char *)s;
 		s++;
 	}

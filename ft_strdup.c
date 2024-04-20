@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 06:44:48 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/19 06:51:57 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/20 03:14:35 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strdup(const char *s1)
 	return (ptr);
 }
 
-#include <libc.h>
+/* #include <libc.h>
 #include <stdio.h>
 
 int	main(void)
@@ -41,4 +41,4 @@ int	main(void)
 	free(ptr);
 
 	return (0);
-}
+} */
