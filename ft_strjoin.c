@@ -1,52 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 06:22:36 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/21 22:14:03 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/21 13:30:54 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/04/21 17:00:47 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	void		*ptr;
-	long long	i;
+	char	*result;
+	int		s1_len;
+	int		s2_len;
 
-	i = count * size;
-	if (i == 0)
-		i = 1;
-	else if (i / size != count)
+	if (!s1 || !s2)
 		return (NULL);
-	ptr = malloc(i);
-	if (!ptr)
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	result = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!result)
 		return (NULL);
-	ft_bzero(ptr, i);
-	return (ptr);
+	while (*s1)
+		*result++ = *s1++;
+	while (*s2)
+		*result++ = *s2++;
+	*result = '\0';
+	return (result - s1_len - s2_len);
 }
 
-/* #include <libc.h>
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
-	int *ptr;
-	int *ptr2;
+	char	*s1;
+	char	*s2;
+	char	*result;
 
-	ptr = (int *)calloc(5, sizeof(int));
-	ptr2 = (int *)ft_calloc(5, sizeof(int));
-	for (int i = 0; i < 5; i++)
-	{
-		printf("%d\n", ptr[i]);
-		printf("%d\n", ptr2[i]);
-	}
-	free(ptr);
-	free(ptr2);
-
+	s1 = "Hello, ";
+	s2 = "world!";
+	result = ft_strjoin(s1, s2);
+	printf("%s\n", result);
 	return (0);
 } */
