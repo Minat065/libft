@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 21:33:04 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/02 17:27:07 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/05/02 20:02:54 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/05/02 21:56:35 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,27 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstnew(void *content)
 {
-	char	*c;
-	int		i;
+	t_list	*new_list;
 
-	if (*s == '\0')
-	{
-		c = (char *)malloc(sizeof(char) * 1);
-		if (!c)
-			return (NULL);
-		c[0] = '\0';
-		return (c);
-	}
-	if (!*s || !f)
+	new_list = (t_list *)malloc(sizeof(t_list));
+	if (!new_list)
 		return (NULL);
-	c = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!c)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		c[i] = f(i, s[i]);
-		i++;
-	}
-	c[i] = '\0';
-	return (c);
+	new_list->content = content;
+	new_list->next = NULL;
+	return (new_list);
 }
 
 /* #include <stdio.h>
 
 int	main(void)
 {
-	char	*s;
-	char	*c;
+	t_list	*list;
 
-	s = "hello";
-	c = ft_strmapi(s, function);
-	printf("%s\n", c);
+	list = ft_lstnew("Hello, world!");
+	printf("%s\n", (char *)list->content);
+	list = ft_lstnew("goodbye, world!");
+	printf("%s\n", (char *)list->content);
 	return (0);
 } */
