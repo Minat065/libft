@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 06:22:36 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/21 22:14:03 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:05:02 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 	void		*ptr;
 	long long	i;
 
+	if (count == 0 || size == 0)
+		return (malloc(0));
 	i = count * size;
 	if (i == 0)
 		i = 1;

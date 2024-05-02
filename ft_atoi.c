@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:55:00 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/24 09:19:08 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:59:27 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_atoi(const char *str)
 			return (INT_MIN);
 		if (num * sign > INT_MAX)
 			return (INT_MAX);
-		num = num * 10 + (*str - '0');
+		num = num * 10 - (*str - '0');
 		str++;
 	}
 	return (sign * num);

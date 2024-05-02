@@ -1,41 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 21:21:13 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/26 07:24:53 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/04/29 21:33:04 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/05/02 16:54:02 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
-/* typedef unsigned int	t_size; */
+#include <stdlib.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*ptr;
-	size_t			i;
+	char	*c;
+	int		i;
 
-	ptr = (unsigned char *)b;
+	if (!*s || !f)
+		return (NULL);
+	c = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!c)
+		return (NULL);
 	i = 0;
-	while (i < len)
+	while (s[i])
 	{
-		ptr[i] = (unsigned char)c;
+		c[i] = f(i, s[i]);
 		i++;
 	}
-	return (b);
+	c[i] = '\0';
+	return (c);
 }
 
-/* #include <string.h>
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
-	char s[10] = "123456789";
-	char s2[10] = "123456789";
-	printf("ft_memset: %s\n", ft_memset(s, 'a', 5));
-	printf("memset: %s\n", memset(s2, 'a', 5));
+	char	*s;
+	char	*c;
+
+	s = "hello";
+	c = ft_strmapi(s, function);
+	printf("%s\n", c);
 	return (0);
 } */
