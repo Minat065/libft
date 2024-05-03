@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 20:02:54 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/02 21:56:35 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:38:00 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,26 @@ t_list	*ft_lstnew(void *content)
 	return (new_list);
 }
 
-/* #include <stdio.h>
+//新しいノードを作成する関数
+//次のノードのアドレスを指してないのでコレはまだリストでは無いはず
 
-int	main(void)
-{
-	t_list	*list;
+// #include <stdio.h>
+//
+// int	main(void)
+//{
+//	t_list	*list;
+//	t_list	*list2;
+//
+//	list = ft_lstnew("Hello, world!");
+//	printf("%s\n", (char *)list->content);
+//	list2 = ft_lstnew("goodbye, world!");
+//	list->next = list2;
+//	printf("%s\n", (char *)list->next->content);
+//	list2->next = list;
+//	printf("%s\n", (char *)list->content);
+//	printf("%s\n", (char *)list->next->content);
+//	printf("%s\n", (char *)list->next->next->content);
+//	return (0);
+//}
 
-	list = ft_lstnew("Hello, world!");
-	printf("%s\n", (char *)list->content);
-	list = ft_lstnew("goodbye, world!");
-	printf("%s\n", (char *)list->content);
-	return (0);
-} */
+// list1のnextにlist2のノードを繋げてあげるとリストになる。
