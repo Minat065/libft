@@ -6,11 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:28:08 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/19 04:38:24 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:40:15 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -31,18 +31,15 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-/* #include <stdio.h>
-#include <string.h>
+// int	main(void)
+// {
+// 	char s[10] = "123456789";
+// 	char s2[10] = "123456789";
+// 	printf("ft_memcpy: %s\n", ft_memcpy(s, "abc", 5));
+// 	printf("memcpy: %s\n", memcpy(s2, "abc", 5));
 
-int	main(void)
-{
-	char s[10] = "123456789";
-	char s2[10] = "123456789";
-	printf("ft_memcpy: %s\n", ft_memcpy(s, "abc", 5));
-	printf("memcpy: %s\n", memcpy(s2, "abc", 5));
+// 	printf("ft_memcpy: %s\n", ft_memcpy("", "", 3));
+// 	printf("memcpy: %s\n", memcpy("", "", 3));
 
-	printf("ft_memcpy: %s\n", ft_memcpy("", "", 3));
-	printf("memcpy: %s\n", memcpy("", "", 3));
-
-	return (0);
-} */
+// 	return (0);
+// }

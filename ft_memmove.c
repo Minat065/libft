@@ -6,11 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 00:04:22 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/19 02:27:14 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:40:41 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -39,14 +39,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-/* #include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char	s[10] = "123456789";
-	char	s2[10] = "123456789";
-	printf("ft_memmove: %s\n", ft_memmove(s + 2, s, 8));
-	printf("memmove: %s\n", memmove(s2 + 2, s2, 8));
-	return (0);
-} */
+// int	main(void)
+// {
+// 	char	s[10] = "123456789";
+// 	char	s2[10] = "123456789";
+// 	printf("ft_memmove: %s\n", ft_memmove(s + 2, s, 8));
+// 	printf("memmove: %s\n", memmove(s2 + 2, s2, 8));
+// 	return (0);
+// }

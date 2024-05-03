@@ -6,11 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:55:00 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/25 17:59:27 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:17:03 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

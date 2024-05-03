@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 14:34:03 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/03 14:51:26 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/05/03 15:38:46 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/05/03 17:35:17 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,44 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (*lst)
-		*lst = (*lst)->next;
-	*lst = new;
+	t_list	*last;
+
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
-
-// int main(void)
+// int	main(void)
 // {
-// 	t_list *lst = malloc(sizeof(t_list));
-// 	t_list *new = malloc(sizeof(t_list));
-// 	lst->content = "lst";
-// 	lst->next = NULL;
-// 	new->content = "new";
-// 	new->next = NULL;
+// 	t_list	*lst;
+// 	t_list	*new;
+// 	t_list	*new2;
+// 	t_list	*new3;
+
+// 	lst = NULL;
+// 	new = ft_lstnew("new");
 // 	ft_lstadd_back(&lst, new);
 // 	printf("lst->content: %s\n", (char *)lst->content);
+// 	printf("lst->next: %p\n", (void *)lst->next);
+// 	new2 = ft_lstnew("new2");
+// 	ft_lstadd_back(&lst, new2);
+// 	printf("lst->content: %s\n", (char *)lst->content);
 // 	printf("lst->next->content: %s\n", (char *)lst->next->content);
-// 	free(lst);
-// 	free(new);
+// 	printf("lst->next: %p\n", (void *)lst->next);
+// 	printf("lst->next->next: %p\n", (void *)lst->next->next);
+// 	new3 = ft_lstnew("new3");
+// 	ft_lstadd_back(&lst, new3);
+// 	printf("lst->content: %s\n", (char *)lst->content);
+// 	printf("lst->next->content: %s\n", (char *)lst->next->content);
+// 	printf("lst->next->next->content: %s\n", (char *)lst->next->next->content);
+// 	printf("lst->next: %p\n", (void *)lst->next);
+// 	printf("lst->next->next: %p\n", (void *)lst->next->next);
+// 	printf("lst->next->next->next: %p\n", (void *)lst->next->next->next);
 // 	return (0);
 // }

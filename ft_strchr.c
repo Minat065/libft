@@ -6,12 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 03:36:54 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/20 04:37:59 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:42:36 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -36,19 +35,19 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-/* #include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int	main(void)
-{
-	char *s = "libft-test-tokyo";
-	printf("ft_strchr: %s\n", ft_strchr(s, 'l' + 516));
-	printf("strchr: %s\n", strchr(s, 'l' + 516));
-	printf("ft_strchr: %s\n", ft_strchr(s, 'b' + 516));
-	printf("strchr: %s\n", strchr(s, 'b' + 516));
-	printf("ft_strchr: %s\n", ft_strchr(s, 'l' - 516));
-	printf("strchr: %s\n", strchr(s, 'l' - 516));
-	printf("ft_strchr: %s\n", ft_strchr(s, 'b' - 516));
-	printf("strchr: %s\n", strchr(s, 'b' - 516));
-	return (0);
-} */
+// int	main(void)
+// {
+// 	char *s = "libft-test-tokyo";
+// 	printf("ft_strchr: %s\n", ft_strchr(s, 'l' + 516));
+// 	printf("strchr: %s\n", strchr(s, 'l' + 516));
+// 	printf("ft_strchr: %s\n", ft_strchr(s, 'b' + 516));
+// 	printf("strchr: %s\n", strchr(s, 'b' + 516));
+// 	printf("ft_strchr: %s\n", ft_strchr(s, 'l' - 516));
+// 	printf("strchr: %s\n", strchr(s, 'l' - 516));
+// 	printf("ft_strchr: %s\n", ft_strchr(s, 'b' - 516));
+// 	printf("strchr: %s\n", strchr(s, 'b' - 516));
+// 	return (0);
+// }

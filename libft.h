@@ -6,15 +6,21 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 06:16:17 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/03 14:52:47 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:45:35 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <ctype.h>
+# include <libc.h>
+# include <limits.h>
 # include <stddef.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -31,7 +37,7 @@ int					ft_strlen(const char *s);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
-char				*ft_memmove(void *dst, const void *src, size_t len);
+void				*ft_memmove(void *dst, const void *src, size_t len);
 int					ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 int					ft_toupper(int c);
@@ -63,5 +69,6 @@ void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
 
 #endif

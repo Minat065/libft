@@ -6,12 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:31:53 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/02 19:19:09 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:41:54 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	putmin(int nb, int fd)
 {

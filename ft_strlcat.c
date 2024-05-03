@@ -6,12 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:54:16 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/20 02:53:12 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:47:22 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -38,42 +37,36 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dst_len + src_len);
 }
 
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+// int	main(void)
+// {
+// 	size_t	dstsize;
+// 	size_t	ret1;
+// 	size_t	ret2;
 
-// Include your ft_strlcat function here
-
-int	main(void)
-{
-	size_t	dstsize;
-	size_t	ret1;
-	size_t	ret2;
-
-	dstsize = 11;
-	ret1 = strlcat(NULL, "Hello", dstsize);
-	ret2 = ft_strlcat(NULL, "Hello", dstsize);
-	//	printf("strlcat: %zu\n", ret1);
-	// printf("ft_strlcat: %zu\n", ret2);
-	if (ret1 == ret2)
-		printf("OK\n");
-	else
-		printf("NG\n");
-	ret1 = strlcat(NULL, NULL, dstsize);
-	ret2 = ft_strlcat(NULL, NULL, dstsize);
-	//	printf("strlcat: %zu\n", ret1);
-	// printf("ft_strlcat: %zu\n", ret2);
-	if (ret1 == ret2)
-		printf("OK\n");
-	else
-		printf("NG\n");
-	ret1 = strlcat("Hello", NULL, dstsize);
-	ret2 = ft_strlcat("Hello", NULL, dstsize);
-	//	printf("strlcat: %zu\n", ret1);
-	// printf("ft_strlcat: %zu\n", ret2);
-	if (ret1 == ret2)
-		printf("OK\n");
-	else
-		printf("NG\n");
-	return (0);
-} */
+// 	dstsize = 11;
+// 	ret1 = strlcat(NULL, "Hello", dstsize);
+// 	ret2 = ft_strlcat(NULL, "Hello", dstsize);
+// 	//	printf("strlcat: %zu\n", ret1);
+// 	// printf("ft_strlcat: %zu\n", ret2);
+// 	if (ret1 == ret2)
+// 		printf("OK\n");
+// 	else
+// 		printf("NG\n");
+// 	ret1 = strlcat(NULL, NULL, dstsize);
+// 	ret2 = ft_strlcat(NULL, NULL, dstsize);
+// 	//	printf("strlcat: %zu\n", ret1);
+// 	// printf("ft_strlcat: %zu\n", ret2);
+// 	if (ret1 == ret2)
+// 		printf("OK\n");
+// 	else
+// 		printf("NG\n");
+// 	ret1 = strlcat("Hello", NULL, dstsize);
+// 	ret2 = ft_strlcat("Hello", NULL, dstsize);
+// 	//	printf("strlcat: %zu\n", ret1);
+// 	// printf("ft_strlcat: %zu\n", ret2);
+// 	if (ret1 == ret2)
+// 		printf("OK\n");
+// 	else
+// 		printf("NG\n");
+// 	return (0);
+// }

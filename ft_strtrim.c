@@ -6,12 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 17:02:53 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/21 21:29:26 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:51:21 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -38,14 +37,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (result);
 }
 
-/* #include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char *str = "1234a12aa12321";
-	char *set = "1234";
+// int	main(void)
+// {
+// 	char *str = "1234a12aa12321";
+// 	char *set = "1234";
 
-	printf("%s\n", ft_strtrim(str, set));
+// 	printf("%s\n", ft_strtrim(str, set));
 
-	return (0);
-} */
+// 	return (0);
+// }

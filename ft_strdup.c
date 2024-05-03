@@ -6,12 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 06:44:48 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/20 03:14:35 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:42:53 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *s1)
 {
@@ -24,21 +23,21 @@ char	*ft_strdup(const char *s1)
 	return (ptr);
 }
 
-/* #include <libc.h>
-#include <stdio.h>
+// #include <libc.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char *str = "Hello, World!";
-	char *ptr;
+// int	main(void)
+// {
+// 	char *str = "Hello, World!";
+// 	char *ptr;
 
-	ptr = strdup(str);
-	printf("%s\n", ptr);
-	free(ptr);
+// 	ptr = strdup(str);
+// 	printf("%s\n", ptr);
+// 	free(ptr);
 
-	ptr = ft_strdup(str);
-	printf("%s\n", ptr);
-	free(ptr);
+// 	ptr = ft_strdup(str);
+// 	printf("%s\n", ptr);
+// 	free(ptr);
 
-	return (0);
-} */
+// 	return (0);
+// }

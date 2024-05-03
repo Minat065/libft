@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 14:11:43 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/03 14:31:42 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:36:00 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (NULL);
 }
-
-// #include <stdio.h>
 
 // int	main(void)
 // {

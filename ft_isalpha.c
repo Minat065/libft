@@ -6,9 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:36:33 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/16 21:14:04 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:33:16 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -17,8 +19,6 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-//#include <stdio.h>
-//#include <ctype.h>
 //
 // int	main(void)
 //{

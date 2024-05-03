@@ -6,11 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 03:56:38 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/20 05:04:30 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:51:01 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

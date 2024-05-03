@@ -6,12 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:21:13 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/26 07:24:53 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:41:21 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-/* typedef unsigned int	t_size; */
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -28,14 +27,14 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-/* #include <string.h>
-#include <stdio.h>
+// #include <string.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char s[10] = "123456789";
-	char s2[10] = "123456789";
-	printf("ft_memset: %s\n", ft_memset(s, 'a', 5));
-	printf("memset: %s\n", memset(s2, 'a', 5));
-	return (0);
-} */
+// int	main(void)
+// {
+// 	char s[10] = "123456789";
+// 	char s2[10] = "123456789";
+// 	printf("ft_memset: %s\n", ft_memset(s, 'a', 5));
+// 	printf("memset: %s\n", memset(s2, 'a', 5));
+// 	return (0);
+// }

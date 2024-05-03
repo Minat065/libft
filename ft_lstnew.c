@@ -6,13 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 20:02:54 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/03 13:38:00 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:36:14 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -29,8 +27,6 @@ t_list	*ft_lstnew(void *content)
 //新しいノードを作成する関数
 //次のノードのアドレスを指してないのでコレはまだリストでは無いはず
 
-// #include <stdio.h>
-//
 // int	main(void)
 //{
 //	t_list	*list;

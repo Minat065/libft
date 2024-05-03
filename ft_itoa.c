@@ -6,14 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:08:37 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/04/26 03:01:54 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:35:01 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int	ft_is_negative(int n)
 {
