@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 16:09:46 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/03 19:59:29 by mirokugo         ###   ########.fr       */
+/*   Created: 2024/05/03 19:16:31 by mirokugo          #+#    #+#             */
+/*   Updated: 2024/05/03 20:03:52 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (!lst)
+	t_list	*next;
+
+	if (!lst || !del)
 		return ;
-	del(lst->content);
-	free(lst);
+	while (*lst)
+	{
+		next = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next;
+	}
+	*lst = NULL;
 }
 
 // void	del(void *content)
 // {
-// 		free(content);
+// 	free(content);
 // }
 
 // int	main(void)
@@ -38,12 +45,18 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 // 	lst->next = lst2;
 // 	lst2->next = lst3;
 
-// 	ft_lstdelone(lst2, del);
-
 // 	while (lst)
 // 	{
 // 		printf("%s\n", (char *)lst->content);
 // 		lst = lst->next;
 // 	}
+
+// 	ft_lstclear(&lst, del);
+
+// 	printf("After clear\n");
+// 	printf("lst: %s\n", (char *)lst);
+// 	printf("lst2: %s\n", (char *)lst2);
+// 	printf("lst3: %s\n", (char *)lst3);
+
 // 	return (0);
 // }
