@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:08:37 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/03 17:35:01 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/07 10:55:33 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,3 +98,23 @@ char	*ft_itoa(int n)
 	str = ft_itoaprocess(n, digits, negcheck, c);
 	return (str);
 }
+//
+// XOR交換アルゴリズム
+// int	main(void)
+// {
+// 	int		n;
+// 	char	*str;
+
+// 	str = (char *)malloc(sizeof(char) * 12);
+// 	n = 42;
+// 	printf("%s\n", ft_itoa(n));
+// 	n = -42;
+// 	printf("%s\n", ft_itoa(n));
+// 	n = 0;
+// 	printf("%s\n", ft_itoa(n));
+// 	n = INT_MIN;
+// 	printf("%s\n", ft_itoa(n));
+// 	n = INT_MAX;
+// 	printf("%s\n", ft_itoa(n));
+// 	return (0);
+// }

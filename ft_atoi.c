@@ -6,7 +6,7 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:55:00 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/03 17:17:03 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:33:25 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,80 +28,51 @@ int	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		if (num * sign < INT_MIN)
-			return (INT_MIN);
+			return (0);
 		if (num * sign > INT_MAX)
-			return (INT_MAX);
+			return (-1);
 		num = num * 10 - (*str - '0');
 		str++;
 	}
 	return (sign * num);
 }
 
-/* #include <libc.h>
-#include <stdio.h>
+// int	main(void)
+// {
+// 	char	*str;
 
-z
-int	main(void)
-{
-	char *str = "12345";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "12345a";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "a12345";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "12345a12345";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "a12345a";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "a";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "  +++12345";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "  ---12345";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "  -2147483648";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "  -2147483649";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "  2147483647";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "  214748364108";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "9223372036854775808";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "-9223372036854775809";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	str = "9223372036854775807";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-
-	return (0);
-} */
+// 	str = "2147483647";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "-2147483648";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "2147483647";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "-1";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "0";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "42tokyo";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "tokyo42";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "000042";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "  -42";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "123456789012345678901234567890";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "-123456789012345678901234567890";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	return (0);
+// }

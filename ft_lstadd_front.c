@@ -6,12 +6,11 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 22:49:11 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/03 17:35:26 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/07 10:30:37 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
