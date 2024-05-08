@@ -6,35 +6,49 @@
 /*   By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 05:55:00 by mirokugo          #+#    #+#             */
-/*   Updated: 2024/05/07 11:33:25 by mirokugo         ###   ########.fr       */
+/*   Updated: 2024/05/09 06:45:02 by mirokugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_isspace(int c)
 {
-	int		sign;
-	long	num;
+	if (c == ' ' || (9 <= c && c <= 13))
+		return (1);
+	return (0);
+}
 
-	sign = -1;
-	num = 0;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
+long	ft_strtol(const char *str)
+{
+	long	n;
+	int		sign;
+
+	n = 0;
+	sign = 1;
+	while (ft_isspace(*str))
 		str++;
-	if (*str == '-')
-		sign = 1;
 	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+		if (*str++ == '-')
+			sign = -1;
+	while ('0' <= *str && *str <= '9')
 	{
-		if (num * sign < INT_MIN)
-			return (0);
-		if (num * sign > INT_MAX)
-			return (-1);
-		num = num * 10 - (*str - '0');
+		if (n > (LONG_MAX - (*str - '0')) / 10)
+		{
+			if (sign == 1)
+				return (LONG_MAX);
+			else
+				return (LONG_MIN);
+		}
+		n = n * 10 + *str - '0';
 		str++;
 	}
-	return (sign * num);
+	return (n * sign);
+}
+
+int	ft_atoi(const char *str)
+{
+	return ((int)ft_strtol(str));
 }
 
 // int	main(void)
@@ -66,6 +80,20 @@ int	ft_atoi(const char *str)
 // 	printf("%d\n", ft_atoi(str));
 // 	printf("%d\n", atoi(str));
 // 	str = "  -42";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "9223372036854775806";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	printf("%ld\n", strtol(str, NULL, 10));
+// 	printf("%d\n", (int)strtol(str, NULL, 10));
+// 	str = "-9223372036854775807";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "9223372036854775808";
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// 	str = "-9223372036854775809";
 // 	printf("%d\n", ft_atoi(str));
 // 	printf("%d\n", atoi(str));
 // 	str = "123456789012345678901234567890";

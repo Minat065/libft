@@ -6,7 +6,7 @@
 #    By: mirokugo <mirokugo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 06:26:01 by mirokugo          #+#    #+#              #
-#    Updated: 2024/05/07 06:06:32 by mirokugo         ###   ########.fr        #
+#    Updated: 2024/05/09 06:41:07 by mirokugo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,23 +20,19 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
        ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
        ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
        ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_putchar_fd.c \
-       ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_striteri.c
-
-BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-             ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+       ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_striteri.c \
+       ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+       ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
-
 NAME = libft.a
 
 all: $(NAME)
 
+bonus: $(NAME)
+
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
-
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
