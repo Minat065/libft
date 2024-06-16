@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # include <ctype.h>
-# include <libc.h>
+//# include <libc.h>
 # include <limits.h>
 # include <stddef.h>
 # include <stdio.h>
